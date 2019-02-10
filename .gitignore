@@ -2,6 +2,19 @@
 *.apk
 *.ap_
 
+# https://github.com/BuatApkOlshop/Apk
+pool:
+  vmImage: 'Blit_1547451226554.png'
+
+steps:
+- task: git@github.
+  inputs:
+    workingDirectory: ''
+    gradleWrapperFile: 'BuatApkOlshop'
+    gradleOptions: '-Xmx3072m'
+    publishJUnitResults: false
+    testResultsFiles: '**/Apk-*.xml'
+    tasks: 'assembleDebug'
 # Files for the ART/Dalvik VM
 *.dex
 
