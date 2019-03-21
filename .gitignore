@@ -76,3 +76,18 @@ fastlane/Preview.html
 fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
+
+
+ # https://github.com/BuatApkOlshop/Apk-Android
+pool:
+  vmImage: 'macOS-10.13'
+
+steps:
+- task: git@github
+  inputs:
+    workingDirectory: ''
+    gradleWrapperFile: 'gradlew'
+    gradleOptions: '-Xmx3072m'
+    publishJUnitResults: false
+    testResultsFiles: '**/TEST-*.xml'
+    tasks: 'assembleDebug'
